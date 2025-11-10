@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "Fathurrahman Pratama Putra ",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 16.2, "left": 175.6, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -278.4, "left": 302.44, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -191.7, "left": 532.2, "attrs": {} },
+    { "type": "wokwi-photoresistor-sensor", "id": "ldr1", "top": 320, "left": 173.6, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 9.8, "left": 624, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -128.4,
+      "left": 752.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -44.05,
+      "left": 700.8,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "bb1:tn.1", "black", [ "h0" ] ],
+    [ "esp:5V", "bb1:tp.1", "red", [ "h-67.05", "v105.3" ] ],
+    [ "esp:3V3", "bb1:bp.1", "green", [ "h-115.05", "v452.1" ] ],
+    [ "bb1:bn.25", "bb1:tn.25", "black", [ "h20.8", "v-174" ] ],
+    [ "dht1:VCC", "bb1:bp.25", "green", [ "v0" ] ],
+    [ "dht1:GND", "bb1:tn.24", "black", [ "v0" ] ],
+    [ "esp:25", "bb1:9t.a", "blue", [ "h-28.65", "v240" ] ],
+    [ "bb1:9t.e", "bb1:9b.f", "blue", [ "v0" ] ],
+    [ "bb1:9b.j", "bb1:23b.j", "blue", [ "v0" ] ],
+    [ "dht1:SDA", "bb1:23t.a", "blue", [ "v0" ] ],
+    [ "bb1:23t.e", "bb1:23b.f", "blue", [ "v0" ] ],
+    [ "ldr1:VCC", "bb1:bp.14", "green", [ "h0" ] ],
+    [ "ldr1:AO", "bb1:10b.i", "violet", [ "h0" ] ],
+    [ "bb1:10b.f", "bb1:10t.e", "violet", [ "v0" ] ],
+    [ "esp:34", "bb1:10t.a", "violet", [ "h0" ] ],
+    [ "ldr1:GND", "bb1:bn.20", "black", [ "h0" ] ],
+    [ "relay1:VCC", "bb1:tp.25", "red", [ "h0" ] ],
+    [ "relay1:GND", "bb1:tn.23", "black", [ "h0" ] ],
+    [ "esp:14", "bb1:11t.a", "yellow", [ "h0" ] ],
+    [ "bb1:11t.e", "bb1:11b.f", "yellow", [ "v0" ] ],
+    [ "bb1:11b.i", "bb1:27b.i", "yellow", [ "v0" ] ],
+    [ "relay1:IN", "bb1:27t.b", "yellow", [ "h0" ] ],
+    [ "bb1:27b.f", "bb1:27t.e", "yellow", [ "v0" ] ],
+    [ "led1:A", "relay1:NO", "#8f4814", [ "v0" ] ],
+    [ "led1:C", "r2:1", "black", [ "v19.2", "h-66.8" ] ],
+    [ "r2:2", "bb1:bn.24", "black", [ "v0" ] ],
+    [ "bb1:bp.23", "relay1:COM", "green", [ "v-0.9", "h278.8" ] ]
+  ],
+  "dependencies": {}
+}

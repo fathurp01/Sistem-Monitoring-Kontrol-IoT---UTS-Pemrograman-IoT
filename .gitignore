@@ -1,0 +1,71 @@
+# ============================================
+# UTS Pemrograman IoT - Git Ignore
+# ============================================
+
+# -------------------- Ngrok --------------------
+ngrok.exe
+ngrok
+*.ngrok
+
+# -------------------- Folder Dpcy --------------------
+Dpcy/
+
+# ==================== ESP32/PlatformIO ====================
+# PlatformIO
+ESP32/.pio/
+ESP32/.vscode/
+ESP32/lib/
+ESP32/include/README
+ESP32/lib/README
+ESP32/test/
+
+# Build outputs
+*.elf
+*.bin
+*.hex
+*.map
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ==================== Website/Node.js ====================
+# Dependencies
+Website/node_modules/
+Website/frontend/node_modules/
+Website/backend/node_modules/
+
+# Environment variables
+Website/.env
+Website/backend/.env
+Website/frontend/.env
+
+# Logs
+Website/logs/
+Website/*.log
+Website/npm-debug.log*
+Website/yarn-debug.log*
+Website/yarn-error.log*
+*.log
+
+# Build outputs
+Website/frontend/build/
+Website/frontend/dist/
+Website/backend/dist/
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Database
+*.sql.backup
+*.db
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
